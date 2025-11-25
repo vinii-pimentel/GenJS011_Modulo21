@@ -1,34 +1,31 @@
-CREATE DATABASE db_ecommerce;
-USE db_ecommerce;
+CREATE DATABASE db_escola;
+USE db_escola;
 CREATE TABLE tb_alunos(
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
 	nome VARCHAR(255) NOT NULL,
-    nota INT,
+    nota DECIMAL(3,1),
 	dataNasc DATE NOT NULL,
-    preco DECIMAL (8,2) NOT NULL,
-    nota INT,
-    promocao BIT    
+    ano INT NOT NULL
 );
 
-INSERT INTO tb_produtos(nome, categoria, preco, promocao) 
-VALUES ("Windows 11", "Software", 1099.00, 0);
-INSERT INTO tb_produtos(nome, categoria, preco, quant, promocao) 
-VALUES ("Windows 11 Pro", "Software", 1599, 999999999, 1);
-INSERT INTO tb_produtos(nome, categoria, preco, quant) 
-VALUES ("SSD", "Hardware", 350.5, 2000);
-INSERT INTO tb_produtos(nome, categoria, preco, quant, promocao) 
-VALUES ("CPU", "Hardware", 1999.99, 250, 1);
-INSERT INTO tb_produtos(nome, categoria, preco) 
-VALUES ("IntelliJ", "Software", 719);
-INSERT INTO tb_produtos(nome, categoria, preco, quant) 
-VALUES ("RAM", "Hardaware", 450, 199);
-INSERT INTO tb_produtos(nome, categoria, preco, promocao) 
-VALUES ("Adobe CC", "Software", 199999, 1);
-INSERT INTO tb_produtos(nome, categoria, preco, promocao) 
-VALUES ("Gimp", "Software", 0, 1);
--- SELECT * FROM tb_produtos;
-SELECT * FROM tb_produtos WHERE preco >= 500;
-SELECT * FROM tb_produtos WHERE preco < 500;
+INSERT INTO tb_alunos(nome, nota, dataNasc, ano) 
+VALUES ("A", 8.5, "2015-12-15", 4);
+INSERT INTO tb_alunos(nome, dataNasc, ano) 
+VALUES ("B", "2014-12-15", 5);
+INSERT INTO tb_alunos(nome, nota, dataNasc, ano) 
+VALUES ("C", 9.0, "2018-12-15", 1);
+INSERT INTO tb_alunos(nome, nota, dataNasc, ano) 
+VALUES ("D", 10.0, "2018-12-15", 1);
+INSERT INTO tb_alunos(nome, nota, dataNasc, ano) 
+VALUES ("E", 10, "2010-12-15", 9);
+INSERT INTO tb_alunos(nome, nota, dataNasc, ano) 
+VALUES ("F", 7, "2017-12-15", 2);
+INSERT INTO tb_alunos(nome, nota, dataNasc, ano) 
+VALUES ("G", 9, "2016-12-15", 3);
+INSERT INTO tb_alunos(nome, nota, dataNasc, ano) 
+VALUES ("H", 2.5, "2015-12-15", 4);
+-- SELECT * FROM tb_alunos;
+SELECT * FROM tb_alunos WHERE nota >= 7;
+SELECT * FROM tb_alunos WHERE nota < 7;
 
-UPDATE tb_produtos SET promocao = 1 WHERE id IN (1,3);
-
+UPDATE tb_alunos SET nota = 8.0 WHERE id = 2;
